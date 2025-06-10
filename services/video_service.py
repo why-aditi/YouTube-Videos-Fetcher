@@ -107,6 +107,9 @@ class VideoService:
                 if filters.channel_id:
                     query["channel_id"] = filters.channel_id
                 
+                if filters.channel_title:
+                    query["channel_title"] = {"$regex": filters.channel_title, "$options": "i"}
+                
                 if filters.published_after or filters.published_before:
                     date_query = {}
                     if filters.published_after:

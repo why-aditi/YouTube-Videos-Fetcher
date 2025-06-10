@@ -95,6 +95,7 @@ class VideoResponse(BaseModel):
 class VideoFilter(BaseModel):
     search: Optional[str] = None
     channel_id: Optional[str] = None
+    channel_title: Optional[str] = None  # Add channel title filter
     published_after: Optional[datetime] = None
     published_before: Optional[datetime] = None
     min_duration: Optional[int] = None
